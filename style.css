@@ -178,78 +178,63 @@ box-shadow: 0 0 50px var(--main-color);
   box-shadow: 0 0 25px var(--main-color);
   background-color: var(--main-color);
 }
-.text-animation{
+
+.animated-text{
   font-size: 34px;
   font-weight: 600;
   min-width: 280px;
 }
-.text-animation span{
+
+.animated-text span{
   position: relative;
 }
-.text-animation span::before{
-  content: "Web Developer";
+
+.animated-text span::before{
+  content: "Developer Frontend";
   color: var(--main-color);
   animation: words 20s infinite;
 }
-.text-animation span::after{
+
+.animated-text span::after{
   content: "";
-  background-color: var(--bg-color);
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
-  border-left: 3px solid var(--bg-color);
+  background-color: var(--bg-color);
+  border-left: 2px solid var(--main-color);
   right: -8px;
-  animation: cursor 0.6s infinite, typing 20s steps
-  (14) infinite;
+  animation: cursor .8s infinite, typing 20s steps(14) infinite;
 }
-@keyframes cursor{
+
+@keyframes cursor {
   to{
-    border-left: 2px solid var(--main-color);
+      border-left: 2px solid #ff7f5000;
   }
 }
-@keyframes words{
-  0%,
-  20%{
-    content: "Frontend";
+
+@keyframes words {
+  0%,20%{
+      content: "Web Designer";
   }
-  21%,
-  40%{
-    content: "Web Designer";
+  21%,40%{
+      content: "Frontend Designer";
   }
-  41%,
-  60%{
-    content: "UI / UX Designer";
+  41%,60%{
+      content: "UI / UX Designer";
   }
-  61%,
-  80%{
-    content: "Developer .Net";
+  61%,80%{
+      content: "Developer Backend";
   }
-  81%,
-  100%{
-    content: "Backend";
+  81%,100%{
+      content: "Developer .Net";
   }
 }
+
 @keyframes typing {
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  70%,
-  75%,
-  90%,
-  95%{
-    width: 0;
+  10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+      width: 0;
   }
-  5%,
-  20%,
-  25%,
-  40%,
-  45%,
-  60%,
-  65%,
-  80%,
-  85%{
-    width: calc(100% + 8);
+  5%,20%,25%,40%,45%,60%,65%,80%,85%{
+      width: calc(100% + 8px);
   }
 }
